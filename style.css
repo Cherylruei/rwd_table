@@ -1,0 +1,307 @@
+html {
+    font-size: 10px;
+  }
+  
+  div {
+    box-sizing: border-box;
+  }
+  .container {
+    width: 100%;
+    max-width: 1190px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  
+  .container .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    background-color: #404644;
+    color: #ffffff;
+  }
+  
+  .container .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 8rem;
+    border-bottom: 2px solid #eeeeee;
+  }
+
+  .body:not(.cancel):hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  
+  .th,
+  .td {
+    text-align: center;
+    line-height: 1.6rem;
+  }
+  
+  .w100 {
+    width: 10rem;
+  }
+  
+  .w60 {
+    width: 6rem;
+  }
+  
+  .w1105 {
+    width: 11.5rem;
+  }
+  
+  .w165 {
+    width: 16.5rem;
+    flex-grow: 1;
+  }
+  
+  .w80 {
+    width: 8rem;
+  }
+  
+  .w70 {
+    width: 7rem;
+  }
+  
+  .w110 {
+    width: 11rem;
+  }
+  
+  .normalLink {
+    color: #18a3e9;
+    text-decoration: none;
+  }
+  
+  .blackLink {
+    color: #000000;
+    text-decoration: underline dashed #000000 0.5px;
+    text-underline-offset: 3px;
+  }
+  
+  .amount {
+    color: #d5585e;
+    font-weight: 800;
+    margin: auto 0
+  }
+  
+  .amount .available {
+    color: #f57643;
+    width: fit-content;
+    font-size: 0.8rem;
+    /* 往小設定畫面上沒改變 字體設大可以 */
+  }
+
+  .td .done {
+    color: #c1c1c1;
+    /* 往小設定畫面上沒改變 字體設大可以 */
+  }
+
+  .fa-dollar-sign {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #d5585e;
+    font-size: 8px;
+  }
+
+  .td .done .fa-dollar-sign {
+    color: ffffff;
+    background: #c1c1c1;
+  }
+  
+  .amount .done {
+    color: #c1c1c1;
+  }
+  
+  .payment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+  }
+  
+  .btn {
+    width: 5.5rem;
+    background: #ffffff;
+    align-items: center;
+    color: #d5585e;
+    font-size: 1.2rem;
+    border: 1.5px solid #d5585e;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .btn:not(.disable){
+    cursor: pointer;
+  }
+  
+  .cancel .available ,.payment .disable {
+    display: none;
+  }
+
+  .cancel,
+  .cancel a:not(.conf, .showCBL) {
+    color: #c1c1c1;
+    text-decoration: none;
+  }
+  
+  .cancel .amount {
+    color: #e1e1e1
+  }
+
+  
+  .cancel .showCBL {
+    color: #000000;
+  }
+  
+  .cancel .info, .paidOff .card  {
+    display: none;
+  }
+  
+  .cancel .payment {
+     visibility: hidden;
+  }
+  
+  .paidOff .disable {
+    display: block;
+    color: #c1c1c1;
+    border: 1.5px solid #c1c1c1;
+  }
+
+  .paidOff .available, .paidOff .card {
+    display: none;
+  }
+  
+  .row, .group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+  @media screen and (max-width: 980px) {
+    .container {
+      min-width: 320px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .container .header {
+      display: none;
+    }
+    .container .body {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      border: 2px solid #eeeeee;
+      margin: 1rem 0;
+      padding: 1rem   2rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+  
+    .td {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  
+    .td::before {
+      content: attr(data-cell) '';
+      color: #000000;
+      font-weight: 400;
+      text-wrap: nowrap;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+    }
+  
+    .row .item {
+      margin-left: 2.5rem;
+    }
+    .amount {
+      margin-left: 1rem;
+    }
+  
+    .layout {
+      align-items: flex-start;
+      margin-left: 1rem;
+    }
+
+    .paidOff .layout {
+      align-items: center;
+    }
+
+    .btnGrp {
+       display: flex;
+       flex-direction: row;
+       width: 100%;
+       gap: 1rem;
+       margin-right: 1rem;
+    }
+
+    .btnGrp .btn {
+        width: 100%;
+        height: 2.5rem;
+        margin-top: 0;
+    }
+
+    .smInfo {
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-start;
+       gap: 0rem;
+    }
+
+    .body .smConf1 {
+      margin-left: 1rem
+    }
+    
+    .body .conf, .body .showCBL {
+        display: block;
+    }
+
+    .conf::before {
+      content: "/";
+    }
+
+
+    .btnGrp .pay {
+        width: 24rem;
+    }
+    
+    .showCBL {
+      margin-left: 1rem;
+    }
+
+  .cancel .available, .cancel button  {
+    display: none;
+  }
+
+  .cancel .payment, .paidOff .payment {
+    visibility: visible;
+    flex-direction: row;
+ }
+ 
+
+ .cancel .payment::after {
+  content: "--";
+  width: 100%;
+  text-align: start;
+ }
+
+ .group {
+  display: flex;
+  flex-direction: column;
+ }
+  .cancel .group, .paidOff .group {
+    flex-direction: row;
+  }
+  
+  }
