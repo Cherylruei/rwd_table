@@ -177,79 +177,76 @@ html {
     display: none;
   }
   
-  .row, .group {
-    display: flex;
-    flex-direction: row;
-  }
-  
 
   @media screen and (max-width: 980px) {
     .container {
       min-width: 320px;
       margin: 0 auto;
-      width: 100%;
     }
   
     .container .header {
       display: none;
     }
     .container .body {
-      flex-direction: column;
-      align-items: stretch;
+      display: block;
       width: 100%;
       border: 2px solid #eeeeee;
       margin: 1rem 0;
       padding: 1rem   2rem;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      box-sizing: border-box;
     }
   
     .td {
       display: flex;
       gap: 1rem;
+      min-width: fit-content;
       width: 100%;
-      margin: 0.5rem 0;
+      margin-top: 1rem;
+      box-sizing: border-box;
     }
   
     .td::before {
       content: attr(data-cell) '';
+      width: 5rem;
       color: #000000;
       font-weight: 400;
+      text-align: end;
       text-wrap: nowrap;
     }
 
-    .row {
-      display: flex;
-      width: 100%;
+    .td.alignLeft::before {
+      text-align: start; 
     }
-  
-    .row .item {
-      margin-left: 2.5rem;
-    }
-    .amount {
-      margin-left: 1rem;
+    
+
+    .body .twoCols {
+      display: inline-flex;
+      width: 45%;
     }
   
     .layout {
       align-items: flex-start;
-      margin-left: 1rem;
-    }
-
-    .paidOff .layout {
-      align-items: center;
     }
 
     .btnGrp {
        display: flex;
        flex-direction: row;
        width: 100%;
+       justify-content: center;
        gap: 1rem;
-       margin-right: 1rem;
     }
 
     .btnGrp .btn {
-        width: 100%;
+        min-width: fit-content;
+        width: 45%;
         height: 2.5rem;
+        line-height: 1.2rem;
         margin-top: 0;
+    }
+
+    .paidOff .btnGrp {
+      justify-content: flex-start;
     }
 
     .smInfo {
@@ -284,24 +281,26 @@ html {
     display: none;
   }
 
+  .cancel .amount, .paidOff .amount, .cancel .payment, .paidOff .payment {
+    display: inline-flex;
+    width: 45%;
+  }
+
   .cancel .payment, .paidOff .payment {
+    position: relative;
     visibility: visible;
     flex-direction: row;
+    align-items: center;
  }
  
 
  .cancel .payment::after {
-  content: "--";
+  position: absolute;
+  top: 0;
+  left: 50px;
+  content: "-";
   width: 100%;
   text-align: start;
  }
-
- .group {
-  display: flex;
-  flex-direction: column;
- }
-  .cancel .group, .paidOff .group {
-    flex-direction: row;
-  }
   
   }
